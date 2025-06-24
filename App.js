@@ -1,30 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from './src/screens/LoginScreen';
+import HomeScreen from './src/screens/HomeScreen';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
-    const showAlert = () => {
-        Alert.alert('مرحبا بك في تطبيقنا!');
-    };
-
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>مرحباً بك في تطبيقنا!</Text>
-            <Button title="اضغط هنا" onPress={showAlert} />
-        </View>
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Login">
+                <Stack.Screen
+                    name="Login"
+                    component={LoginScreen}
+                    options={{ title: 'تسجيل الدخول' }}
+                />
+                <Stack.Screen
+                    name="Home"
+                    component={HomeScreen}
+                    options={{ title: 'الصفحة الرئيسية' }}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#f5f5f5',
-    },
-    title: {
-        fontSize: 24,
-        marginBottom: 20,
-    },
-});
 
 export default App;

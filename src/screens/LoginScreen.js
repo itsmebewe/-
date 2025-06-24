@@ -6,7 +6,10 @@ const LoginScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>مرحباً بك في تطبيقنا!</Text>
-            <Button title="الدخول إلى التطبيق" onPress={() => navigation.navigate('Home')} />
+            <Button
+                title="الدخول إلى التطبيق"
+                onPress={() => navigation.navigate('Home')}
+            />
         </View>
     );
 };
