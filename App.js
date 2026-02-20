@@ -1,30 +1,33 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
-const App = () => {
-    const showAlert = () => {
-        Alert.alert('مرحبا بك في تطبيقنا!');
-    };
-
-    return (
-        <View style={styles.container}>
-            <Text style={styles.title}>مرحباً بك في تطبيقنا!</Text>
-            <Button title="اضغط هنا" onPress={showAlert} />
-        </View>
-    );
-};
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>🚀 بداية جديدة من الصفر</Text>
+      <Text style={styles.subtitle}>تم تنظيف المشروع ويمكنك البناء من جديد.</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#f5f5f5',
-    },
-    title: {
-        fontSize: 24,
-        marginBottom: 20,
-    },
+  container: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 24,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: '700',
+    marginBottom: 12,
+    textAlign: 'center',
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#4b5563',
+    textAlign: 'center',
+  },
 });
-
-export default App;
